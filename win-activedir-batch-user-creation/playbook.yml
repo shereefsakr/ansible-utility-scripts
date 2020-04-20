@@ -1,0 +1,13 @@
+---
+## This script is still experimental, and not tested yet
+- hosts: activedirservers
+  tasks:
+    - name: Ensure esrinea.user6 is present
+      win_domain_user:
+        name: esrinea.user6
+        password: Pa$$w0rd
+        state: present
+        #path: ou=test,dc=domain,dc=local
+        groups:
+          - Domain Admins
+          - gss-users
