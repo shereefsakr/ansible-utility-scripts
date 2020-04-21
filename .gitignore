@@ -1,1 +1,3 @@
 win-activedir-batch-user-creation/hosts.yml
+.vscode/settings.json
+win-activedir-batch-user-creation/playbook.retry
