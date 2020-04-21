@@ -1,0 +1,20 @@
+---
+- hosts: activedirservers
+  tasks:
+    - name: Ensure esrinea.user6 is present
+      win_domain_user:
+        name: "{{item}}"
+        password: Pa$$w0rd
+        state: present
+        #path: ou=test,dc=domain,dc=local
+        groups:
+          - Domain Admins
+          - gss-users
+      ## in case specific users need to exist
+      # with_items:
+      #   - esrinea.user6
+      #   - esrinea.user7
+      #   - esrinea.user8
+      #   - esrinea.user9
+      ## in case specific range of users need to exist
+      with_sequence: start=10 end=20 stride=1 format=esrinea.user%d
